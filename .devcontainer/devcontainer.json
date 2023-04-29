@@ -1,0 +1,33 @@
+{
+  "name": "Python-3.10",
+  "build": { "dockerfile": "Dockerfile", "context": "." },
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": ["ms-python.python", "ms-python.vscode-pylance"],
+      "settings": {
+        "editor.formatOnSave": true,
+        "python.linting.enabled": true,
+        "python.linting.lintOnSave": true,
+        "python.formatting.provider": "black",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.languageServer": "Pylance",
+        "python.linting.pylintEnabled": true,
+        "python.linting.pycodestyleEnabled": true,
+        "editor.rulers": [
+          {
+            "column": 80,
+            "color": "#5a5a5a80"
+          },
+          {
+            "column": 100,
+            "color": "#ff0000"
+          }
+        ],
+        "editor.guides.bracketPairs": true
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}
